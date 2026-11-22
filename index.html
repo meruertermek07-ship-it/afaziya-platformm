@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6c63ff">
+
+    <title>Тілашар – логопедиялық түзету платформасы</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     БАСТЫ БЕТ
+========================= -->
+
+<section id="homePage" class="page active">
+
+    <header class="home-header">
+        <div class="logo">🌸 ТІЛАШАР</div>
+    </header>
+
+    <div class="home-content">
+
+        <div class="home-icon">🗣️</div>
+
+        <h1>Тілашар</h1>
+
+        <h2>Сөйлеуді қалпына келтіру платформасы</h2>
+
+        <p>
+            Афазиясы бар ересектерге арналған
+            логопедиялық жаттығулар мен түзету тапсырмалары.
+        </p>
+
+        <button class="primary-btn"
+                onclick="showPage('mainPage')">
+            Бастау
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     НЕГІЗГІ МӘЗІР
+========================= -->
+
+<section id="mainPage" class="page">
+
+    <header class="page-header">
+
+        <h1>🌸 Тілашар</h1>
+
+        <p>Сөйлеуді қалпына келтіру әлеміне қош келдіңіз!</p>
+
+    </header>
+
+
+    <div class="user-progress">
+
+        <div class="progress-info">
+            <span>Жиналған бонус</span>
+            <strong id="mainBonus">0 ⭐</strong>
+        </div>
+
+        <div class="progress-info">
+            <span>Орындалған тапсырмалар</span>
+            <strong id="mainCompleted">0</strong>
+        </div>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+        <div class="menu-card"
+             onclick="openSection('breathing')">
+
+            <div class="menu-icon">🌬️</div>
+
+            <h3>Тыныс алу жаттығулары</h3>
+
+            <p>Дұрыс тыныс алуды дамыту</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('articulation')">
+
+            <div class="menu-icon">👄</div>
+
+            <h3>Артикуляциялық жаттығулар</h3>
+
+            <p>Сөйлеу мүшелерінің қимылын дамыту</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('vocabulary')">
+
+            <div class="menu-icon">📚</div>
+
+            <h3>Сөздік қорды дамыту</h3>
+
+            <p>Сөздерді түсіну және қолдану</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('understanding')">
+
+            <div class="menu-icon">👂</div>
+
+            <h3>Сөйлеуді түсіну</h3>
+
+            <p>Сөздер мен сөйлемдерді түсіну</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('speech')">
+
+            <div class="menu-icon">🗣️</div>
+
+            <h3>Сөйлеуді қалыптастыру</h3>
+
+            <p>Ауызша сөйлеуді дамыту</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('reading')">
+
+            <div class="menu-icon">📖</div>
+
+            <h3>Оқу және жазу</h3>
+
+            <p>Оқу мен жазу дағдыларын дамыту</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="openSection('logorhythmics')">
+
+            <div class="menu-icon">🎵</div>
+
+            <h3>Логоритмика</h3>
+
+            <p>Қимыл мен сөйлеуді үйлестіру</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="showPage('resultsPage')">
+
+            <div class="menu-icon">📊</div>
+
+            <h3>Нәтижелер</h3>
+
+            <p>Орындалған тапсырмалар мен ұпайлар</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+
+        <div class="menu-card"
+             onclick="showPage('cabinetPage')">
+
+            <div class="menu-icon">📝</div>
+
+            <h3>Логопедиялық кабинет</h3>
+
+            <p>Сөйлеу картасы және динамика</p>
+
+            <button>Ашу</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="main-bottom">
+
+        <button class="secondary-btn"
+                onclick="showPage('homePage')">
+            Басты бетке оралу
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ТАПСЫРМАЛАР БӨЛІМІ
+========================= -->
+
+<section id="tasksPage" class="page">
+
+    <header class="section-header">
+
+        <button class="back-btn"
+                onclick="showPage('mainPage')">
+            ← Артқа
+        </button>
+
+        <h1 id="sectionTitle">Жаттығулар</h1>
+
+        <p>
+            Тапсырманы таңдап, орындауды бастаңыз.
+        </p>
+
+    </header>
+
+
+    <div id="tasksContainer" class="tasks-container">
+
+        <!-- Тапсырмалар JavaScript арқылы шығады -->
+
+    </div>
+
+
+    <div class="bottom-navigation">
+
+        <button onclick="showPage('mainPage')">
+            🏠 Басты мәзір
+        </button>
+
+        <button onclick="showPage('resultsPage')">
+            📊 Нәтижелер
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ЖЕКЕ ЖАТТЫҒУ БЕТІ
+========================= -->
+
+<section id="exercisePage" class="page">
+
+    <header class="exercise-header">
+
+        <button class="back-btn"
+                onclick="stopMedia(); showPage('tasksPage')">
+            ← Тапсырмаларға оралу
+        </button>
+
+        <h1 id="exerciseTitle">
+            Жаттығу атауы
+        </h1>
+
+    </header>
+
+
+    <main class="exercise-main">
+
+
+        <!-- МАҚСАТЫ -->
+
+        <div class="exercise-info-card">
+
+            <h3>🎯 Жаттығудың мақсаты</h3>
+
+            <p id="exerciseGoal"></p>
+
+        </div>
+
+
+        <!-- ОРЫНДАУ ТӘРТІБІ -->
+
+        <div class="exercise-info-card">
+
+            <h3>📌 Орындау тәртібі</h3>
+
+            <p id="exerciseInstruction"></p>
+
+        </div>
+
+
+        <!-- ҚАЖЕТТІ МАТЕРИАЛДАР -->
+
+        <div class="exercise-info-card">
+
+            <h3>🧩 Қажетті материалдар</h3>
+
+            <p id="exerciseMaterials"></p>
+
+        </div>
+
+
+        <!-- ЕСКЕРТПЕ -->
+
+        <div class="warning-card">
+
+            <h3>⚠️ Ескерту</h3>
+
+            <p id="exerciseWarning"></p>
+
+        </div>
+
+
+        <!-- ТАПСЫРМАНЫҢ НЕГІЗГІ БӨЛІГІ -->
+
+        <div id="exerciseContent" class="exercise-content">
+
+            <!-- Интерактивті тапсырма JavaScript арқылы ашылады -->
+
+        </div>
+
+
+        <!-- ТАПСЫРМА НӘТИЖЕСІ -->
+
+        <div id="exerciseResult" class="exercise-result">
+
+        </div>
+
+
+        <!-- ТАПСЫРМАНЫ АЯҚТАУ -->
+
+        <div class="exercise-actions">
+
+            <button class="complete-btn"
+                    onclick="completeExercise()">
+                ✓ Тапсырманы аяқтау
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <div class="bottom-navigation">
+
+        <button onclick="showPage('mainPage')">
+            🏠 Басты мәзір
+        </button>
+
+        <button onclick="showPage('resultsPage')">
+            📊 Нәтижелер
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     НӘТИЖЕЛЕР БӨЛІМІ
+========================= -->
+
+<section id="resultsPage" class="page">
+
+    <header class="section-header">
+
+        <button class="back-btn"
+                onclick="showPage('mainPage')">
+            ← Артқа
+        </button>
+
+        <h1>📊 Нәтижелер</h1>
+
+        <p>
+            Орындаған тапсырмаларыңыздың көрсеткіштері
+        </p>
+
+    </header>
+
+
+    <!-- ЖАЛПЫ СТАТИСТИКА -->
+
+    <div class="results-summary">
+
+        <div class="result-card">
+
+            <div class="result-icon">✅</div>
+
+            <h3>Орындалған тапсырмалар</h3>
+
+            <div id="completedCount">0</div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-icon">⏳</div>
+
+            <h3>Орындалмаған тапсырмалар</h3>
+
+            <div id="uncompletedCount">0</div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-icon">⭐</div>
+
+            <h3>Жиналған бонус</h3>
+
+            <div id="totalBonus">0</div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-icon">🏆</div>
+
+            <h3>Жалпы ұпай</h3>
+
+            <div id="totalScore">0</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ТАПСЫРМАЛАР БОЙЫНША НӘТИЖЕ -->
+
+    <div class="results-block">
+
+        <h2>📋 Тапсырмалар бойынша нәтиже</h2>
+
+        <div id="statistics">
+
+            <!-- Нәтижелер JavaScript арқылы шығады -->
+
+        </div>
+
+    </div>
+
+
+    <!-- БОНУС ШКАЛАСЫ -->
+
+    <div class="results-block">
+
+        <h2>⭐ Бонус шкаласы</h2>
+
+        <div id="bonusScale">
+
+            <!-- Бонус деңгейлері JavaScript арқылы шығады -->
+
+        </div>
+
+    </div>
+
+
+    <!-- СЫЙЛЫҚТАР -->
+
+    <div class="results-block">
+
+        <h2>🎁 Бонустық сыйлықтар</h2>
+
+        <p>
+            Тапсырмаларды орындап, бонус жинаңыз.
+            Жеткілікті бонус жиналғанда ойындар ашылады.
+        </p>
+
+        <div id="rewardsContainer">
+
+            <!-- Сыйлықтар JavaScript арқылы шығады -->
+
+        </div>
+
+    </div>
+
+
+    <div class="results-actions">
+
+        <button class="secondary-btn"
+                onclick="showPage('mainPage')">
+            Басты мәзірге оралу
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ЛОГОПЕДИЯЛЫҚ КАБИНЕТ
+========================= -->
+
+<section id="cabinetPage" class="page">
+
+    <header class="section-header">
+
+        <button class="back-btn"
+                onclick="showPage('mainPage')">
+            ← Артқа
+        </button>
+
+        <h1>📝 Логопедиялық кабинет</h1>
+
+        <p>
+            «Тілашар» логопедиялық кабинетіне арналған
+            сөйлеу картасы
+        </p>
+
+    </header>
+
+
+    <div class="cabinet-description">
+
+        <h2>Афазиясы бар ересектерге арналған</h2>
+
+        <p>
+            Бұл карта логопед кабинетінде күнделікті
+            және жүйелі түзету жұмыстарын жүргізуге,
+            сөйлеу ерекшеліктерін бақылауға және
+            нәтижелер динамикасын тіркеуге арналған.
+        </p>
+
+    </div>
+
+
+    <!-- СӨЙЛЕУ КАРТАСЫ -->
+
+    <div id="speechCardContainer" class="speech-card-container">
+
+        <!-- Сөйлеу картасы JavaScript арқылы ашылады -->
+
+    </div>
+
+
+    <div class="cabinet-actions">
+
+        <button class="secondary-btn"
+                onclick="showPage('mainPage')">
+            Басты мәзірге оралу
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
